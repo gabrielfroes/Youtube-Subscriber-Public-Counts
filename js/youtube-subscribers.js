@@ -17,8 +17,10 @@ const youtube_subscribers = {
         const scale = Math.pow(10, tier * 3);
 
         const scaled = number / scale;
-
-        return ( (number >= 9999) ? ~~scaled : scaled.toFixed(1) ) + ' ' + sufix;
+        
+        const scaledOneDigit = Math.trunc(scaled * 10) / 10 ;
+        
+        return ( (number >= 9999) ? ~~scaledOneDigit : scaledOneDigit ) + ' ' + sufix;
     }
 
 }
